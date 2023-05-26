@@ -15,12 +15,12 @@ public class Empleado {
         this.salarioBase = salarioBase;
     }
 
-    /**
-     * Salario bruto se calcula sumando al salario base una prima de 100 euros 
-     * si ventasMes es mayor o igual que 1000 euros, y de 200 euros si fuese al menos de 1500 euros. 
-     * Además por cada hora extra se pagará a 20 euros. 
-     * Si ventasMes o horasExtra toman valores negativos el método lanzará una excepción de tipo Exception.
-     * Salario Bruto = Salario Base + prima + horas extra
+    /*
+      Salario bruto se calcula sumando al salario base una prima de 100 euros 
+      si ventasMes es mayor o igual que 1000 euros, y de 200 euros si fuese al menos de 1500 euros. 
+      Además por cada hora extra se pagará a 20 euros. 
+      Si ventasMes o horasExtra toman valores negativos el método lanzará una excepción de tipo Exception.
+      Salario Bruto = Salario Base + prima + horas extra
      */
     public float calculaSalarioBruto(float ventasMes, float horasExtra) throws Exception{
         float salarioBruto = this.salarioBase;
@@ -36,16 +36,6 @@ public class Empleado {
         return salarioBruto;
     }
 
-    /**
-     * Si el salario bruto es menor de 1000 euros, no se aplicará ninguna
-     * retención. Para salarios brutos a partir de 1000 euros, y menores de 1500
-     * euros se les aplicará un 16% de retención, y a los salarios brutos a
-     * partir de 1500 euros se les aplicará un 18%. El método nos devolverá
-     * salarioBruto * (1-retencion), o Excepcion si el salario bruto es menor
-     * que cero.
-     */
-    
-    
     public float calculaSalarioNeto(float salarioBruto, boolean familiaNumerosa, String puesto) throws Exception {
         float salarioNeto = salarioBruto;
         if (salarioBruto < 0 || salarioBruto > 3000) {
